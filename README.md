@@ -72,6 +72,7 @@ Expected Response:`{
 
 ## File Structure
 
+```
 receipt-processor/
 ├── dockerfile
 ├── requirements.txt
@@ -86,6 +87,7 @@ receipt-processor/
 │ ├── test_calculate.py
 │ └── test_validators.py
 └── README.md
+```
 
 ### What each file do
 
