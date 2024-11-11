@@ -6,8 +6,8 @@ class TestCalculatePoints(unittest.TestCase):
     def test_calculate_points_example1(self):
         receipt = {
             "retailer": "Target",
-            "purchaseDate": datetime.strptime("2022-01-01", "%Y-%m-%d"),
-            "purchaseTime": datetime.strptime("13:01", "%H:%M").time(),
+            "purchaseDate": "2022-01-01",
+            "purchaseTime": "13:01",
             "items": [
                 {"shortDescription": "Mountain Dew 12PK", "price": "6.49"},
                 {"shortDescription": "Emils Cheese Pizza", "price": "12.25"},
