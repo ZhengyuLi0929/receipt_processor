@@ -1,5 +1,3 @@
-# calculate.py
-
 import re
 import math
 from datetime import datetime, time

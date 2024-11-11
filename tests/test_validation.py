@@ -24,8 +24,6 @@ class TestValidators(unittest.TestCase):
         }
         with self.assertRaises(ValueError):
             validate_receipt(receipt)
-
-    # Additional test cases...
-
+            
 if __name__ == '__main__':
     unittest.main()

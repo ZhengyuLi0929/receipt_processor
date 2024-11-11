@@ -5,10 +5,12 @@ from threading import Lock
 from flask import jsonify, abort
 import logging
 
-# In-memory storage
+# In-memory storage and lock
 receipts = {}
 receipts_lock = Lock()
 
+# =====functions for the business logic=======
+# validation of receipt
 def process_receipt_service(request):
     data = request.get_json()
     if not data:
@@ -30,6 +32,8 @@ def process_receipt_service(request):
 
     return jsonify({"id": receipt_id}), 200
 
+
+# getting the points
 def get_points_service(receipt_id):
     with receipts_lock:
         receipt_entry = receipts.get(receipt_id)

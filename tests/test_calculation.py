@@ -17,11 +17,9 @@ class TestCalculatePoints(unittest.TestCase):
             ],
             "total": "35.35"
         }
-        expected_points = 28  # Based on the example
+        expected_points = 28 
         actual_points = calculate_points(receipt)
         self.assertEqual(actual_points, expected_points)
-
-    # Additional test cases...
 
 if __name__ == '__main__':
     unittest.main()

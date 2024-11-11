@@ -1,6 +1,7 @@
 from flask import request, jsonify, abort
 from services import process_receipt_service, get_points_service
 
+# defines routes
 def init_routes(app):
     @app.route('/receipts/process', methods=['POST'])
     def process_receipt():
