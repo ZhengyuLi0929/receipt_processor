@@ -7,10 +7,16 @@ A web service that processes receipts and calculates reward points based on spec
 ### Special Features
 
 - Modular codebase: I understand it's a simple coding challenge, but I still made the code organized into several modules, for the sake of maintainability in a production environment
-- Input Validation: Implemented input validation to ensure the quality of receipt inputs
+- Input Validation: Implemented input validation to ensure the quality of receipt inputs. I validated the following:
+  - input regex must follow api.yml
+  - no duplicated receipts
+  - all entries must be present in the receipts, and there cannot be more entries present
+  - date must be YYYY-MM-DD, and date+time and cannot be in the future
+  - to be a valid receipt, the sum of prices must add up to total
 - Data integrity: I used locks to ensure the in-memory data is consistent
-- Multi-thread environment: Gunicorn is a Python lib for running the application in a production-like environment.
-  In our case, since we specified in-memory storage, I used only one instance, but with 5 different threads
+- Multi-thread environment:
+  - Gunicorn is a Python lib for running the application in a production-like environment.
+  - In our case, since we specified in-memory storage, I used only one instance, but with 5 different threads
 - Logging: Logs messages whenever the service finishes processing a receipt.
 - Error Handling: Consistent error responses with appropriate HTTP status codes.
 - Unit Testing: located in the `/tests` folder
